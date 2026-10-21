@@ -1,17 +1,20 @@
+import homeworks.*;
+import labs.*;
+import other.MiddleTasks;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    static void main() {
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
         while(loop) {
-            System.out.println(" ");
+            System.out.println("\n=====My Programs=====");
             System.out.println("Choose");
             System.out.println("0 - Exit");
             System.out.println("1 - Middle Task");
             System.out.println("2 - Homework 2");
             System.out.println("3 - Homework 3");
-            System.out.println("4 - Lab Assigment");
+            System.out.println("4 - Lab Assigment (+ 3 Student Life Projects)");
             System.out.print("Answer(number): ");
 
             int choice = scanner.nextInt();
@@ -25,8 +28,8 @@ public class Main {
             } else if (choice == 3){
                 runHomeworkThreeMenu(scanner);
             } else if (choice == 4) {
-                System.out.println("Not ready yet");
-            }  else {
+                LabAssigmentMenu(scanner);
+            } else {
                 System.out.println("Bruh, just numbers from list!!!");
             }
         }
@@ -36,6 +39,7 @@ public class Main {
         System.out.println(" ");
         System.out.println("---Homework 2---");
         System.out.println("Choose program");
+        System.out.println("0 - Return");
         System.out.println("1 - MaxNumber ");
         System.out.println("2 - Check Age");
         System.out.println("3 - Odd or even");
@@ -60,6 +64,8 @@ public class Main {
             SmallTasks.LoanApprovalSystem(scanner);
         } else if (choice == 7) {
             SmallTasks.runDiscountCalculator(scanner);
+        } else if (choice == 0) {
+            System.out.println(" ");
         } else {
             System.out.println("Bruh, just numbers from list!!!");
         }
@@ -70,12 +76,15 @@ public class Main {
         System.out.println(" ");
         System.out.println("---Middle tasks Menu---");
         System.out.println("Choose program");
+        System.out.println("0 - Return");
         System.out.println("1 - Calculator");
         System.out.print("Answer(number): ");
         int choice = scanner.nextInt();
 
         if (choice == 1) {
             System.out.println("Removed");
+        } else if (choice == 0) {
+            System.out.println(" ");
         } else {
             System.out.println("Bruh, just numbers from list!!!");
         }
@@ -85,6 +94,7 @@ public class Main {
         System.out.println(" ");
         System.out.println("---Homework tasks Menu---");
         System.out.println("Choose program");
+        System.out.println("0 - Return");
         System.out.println("1 - Simple While 'i'");
         System.out.println("2 - Simple For");
         System.out.println("3 - From One To N");
@@ -96,9 +106,9 @@ public class Main {
         int choice = scanner.nextInt();
 
         if (choice == 1) {
-            HomeworkThree.WhileTaskOne(scanner);
+            HomeworkThree.WhileTaskOne();
         } else if (choice == 2) {
-            HomeworkThree.ForTaskOne(scanner);
+            HomeworkThree.ForTaskOne();
         } else if (choice == 3) {
             HomeworkThree.FromOneToN(scanner);
         } else if (choice == 4) {
@@ -109,6 +119,8 @@ public class Main {
             HomeworkThree.FizzBuzz(scanner);
         } else if (choice == 7) {
             runPracticeSession(scanner);
+        } else if (choice == 0) {
+            System.out.println(" ");
         } else {
             System.out.println("Bruh, just numbers from list!!!");
         }
@@ -118,9 +130,11 @@ public class Main {
         System.out.println(" ");
         System.out.println("---Practice Session Menu---");
         System.out.println("Choose program");
+        System.out.println("0 - Return");
         System.out.println("1 - ATM");
         System.out.println("2 - Guess The Number");
         System.out.println("3 - Number Statistics");
+        System.out.print("Choose: ");
         int choice = scanner.nextInt();
 
         if (choice == 1) {
@@ -129,25 +143,31 @@ public class Main {
             HomeworkThree.GuessTheNumber(scanner);
         } else if (choice == 3) {
             HomeworkThree.NumberStatistics(scanner);
+        } else if (choice == 0) {
+            runHomeworkThreeMenu(scanner);
         } else {
             System.out.println("Bruh, just numbers from list!");
         }
     }
 
-    public static void LabAssigment(Scanner scanner){
+    public static void LabAssigmentMenu(Scanner scanner){
         System.out.println(" ");
         System.out.println("---Lab Assigment Menu---");
         System.out.println("Choose program");
-        System.out.println("1 - ");
-        System.out.println("2 - ");
-        System.out.println("3 - ");
+        System.out.println("1 - Store Menu");
+        System.out.println("2 - StudyPlanner");
+        System.out.println("3 - Semester Grade Tracker");
+        System.out.println("4 - Student Screen-Time Tracker");
+        System.out.print("Answer(number): ");
         int choice = scanner.nextInt();
 
         if (choice == 1) {
-            System.out.println("Not ready yet");
+            SimpleStore.Store(scanner);
         } else if (choice == 2) {
-            System.out.println("Not ready yet");
+            ThreeStudents.StudyPlanner(scanner);
         } else if (choice == 3) {
+            System.out.println("Not ready yet");
+        } else if (choice == 4) {
             System.out.println("Not ready yet");
         } else {
             System.out.println("Bruh, just numbers from list!");

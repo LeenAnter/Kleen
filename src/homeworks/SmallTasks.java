@@ -1,3 +1,4 @@
+package homeworks;
 import java.util.Scanner;
 
 public class SmallTasks {

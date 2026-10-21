@@ -1,7 +1,8 @@
+package homeworks;
 import java.util.Scanner;
 
 public class HomeworkThree {
-    public static void WhileTaskOne(Scanner scanner) {
+    public static void WhileTaskOne() {
         double i = 1;
         while (i <= 1000) {
             i *= 10;
@@ -9,7 +10,7 @@ public class HomeworkThree {
         }
     }
 
-    public static void ForTaskOne(Scanner scanner) {
+    public static void ForTaskOne() {
         for (double i = 1; i < 1000; i *= 10)
             System.out.println("'i' = " + i);
     }
