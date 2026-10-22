@@ -166,9 +166,9 @@ public class Main {
         } else if (choice == 2) {
             ThreeStudents.StudyPlanner(scanner);
         } else if (choice == 3) {
-            System.out.println("Not ready yet");
+            ThreeStudents.GradeTracker(scanner);
         } else if (choice == 4) {
-            System.out.println("Not ready yet");
+            ThreeStudents.ScreenTimeTracker(scanner);
         } else {
             System.out.println("Bruh, just numbers from list!");
         }
