@@ -133,7 +133,7 @@ public class SmallTasks {
             System.out.print("Is birthday month (true/false): ");
             boolean isBirthday = scanner.nextBoolean();
 
-            int discountPercent = 0;
+            int discountPercent;
             if (originalPrice < 20) {
                 discountPercent = 0;
             }
@@ -149,9 +149,7 @@ public class SmallTasks {
             else if (originalPrice >= 100 && hasCoupon) {
                 discountPercent = 10;
             }
-            else {
-                discountPercent = 0;
-            }
+            else discountPercent = 0;
 
             double discountAmount = originalPrice * (discountPercent / 100.0);
             double finalPrice = originalPrice - discountAmount;
@@ -162,6 +160,107 @@ public class SmallTasks {
             System.out.println("Discount amount: $" + discountAmount);
             System.out.println("Final price: $" + finalPrice);
         }
+
+    // Метод
+    public static String calculateGrade(int score) {
+        if (score < 0 || score > 100) {
+            return "Invalid score";
+        }
+
+        if (score >= 90) {
+            return "A";
+        } else if (score >= 80) {
+            return "B";
+        } else if (score >= 70) {
+            return "C";
+        } else if (score >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
+
+    // запуск для меню
+    public static void runCalculateGrade(Scanner scanner) {
+        System.out.println("----- Student Grader -----");
+        System.out.print("Enter score (0 to 100): ");
+        int score = scanner.nextInt();
+        String grade = calculateGrade(score);
+        System.out.println("Grade: " + grade);
+    }
+    // Метод
+    public static void generatePattern(Scanner scanner) {
+        System.out.println("----- Number Pattern Generator -----");
+        System.out.print("Enter the size of the pattern (number of rows): ");
+        int size = scanner.nextInt();
+
+        System.out.println("""
+                Choose the pattern type:
+                1 -> Right Triangle
+                2 -> Inverted Right Triangle
+                3 -> Pyramid
+                4 -> Inverted Pyramid
+                5 -> Another Example of a Pattern""");
+        System.out.print("Your choice: ");
+        int type = scanner.nextInt();
+
+        System.out.println("\nGenerated Pattern:");
+        switch (type) {
+            case 1:
+                for (int i = 1; i <= size; i++) {
+                    for (int j = 1; j <= i; j++) {
+                        System.out.print("* ");
+                    }
+                    System.out.println();
+                }
+                break;
+
+            case 2:
+                for (int i = size; i >= 1; i--) {
+                    for (int j = 1; j <= i; j++) {
+                        System.out.print("* ");
+                    }
+                    System.out.println();
+                }
+                break;
+
+            case 3:
+                for (int i = 1; i <= size; i++) {
+                    for (int j = i; j < size; j++) {
+                        System.out.print(" ");
+                    }
+                    for (int j = 1; j <= (2 * i - 1); j++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+                break;
+
+            case 4:
+                for (int i = size; i >= 1; i--) {
+                    for (int j = size; j > i; j--) {
+                        System.out.print(" ");
+                    }
+                    for (int j = 1; j <= (2 * i - 1); j++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+                break;
+
+            case 5:
+                for (int i = 1; i <= size; i++) {
+                    for (int j = 1; j <= size; j++) {
+                        System.out.print(j + " ");
+                    }
+                    System.out.println();
+                }
+                break;
+
+            default:
+                System.out.println("Invalid pattern type selected.");
+        }
+    }
 }
 
 

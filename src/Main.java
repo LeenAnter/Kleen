@@ -15,6 +15,7 @@ public class Main {
             System.out.println("2 - Homework 2");
             System.out.println("3 - Homework 3");
             System.out.println("4 - Lab Assigment (+ 3 Student Life Projects)");
+            System.out.println("5 - Methods Homework");
             System.out.print("Answer(number): ");
 
             int choice = scanner.nextInt();
@@ -29,6 +30,8 @@ public class Main {
                 runHomeworkThreeMenu(scanner);
             } else if (choice == 4) {
                 LabAssigmentMenu(scanner);
+            } else if (choice == 5) {
+                MethodsMenu(scanner);
             } else {
                 System.out.println("Bruh, just numbers from list!!!");
             }
@@ -169,6 +172,25 @@ public class Main {
             ThreeStudents.GradeTracker(scanner);
         } else if (choice == 4) {
             ThreeStudents.ScreenTimeTracker(scanner);
+        } else {
+            System.out.println("Bruh, just numbers from list!");
+        }
+    }
+
+    public static void MethodsMenu(Scanner scanner) {
+        System.out.println("""
+                
+                ---Methods Menu---
+                Choose program:
+                1 - Student Grader
+                2 - Number Pattern Generator""");
+        System.out.print("Answer(number): ");
+        int choice = scanner.nextInt();
+
+        if (choice == 1) {
+            SmallTasks.runCalculateGrade(scanner);
+        }  else if (choice == 2) {
+            SmallTasks.generatePattern(scanner);
         } else {
             System.out.println("Bruh, just numbers from list!");
         }
